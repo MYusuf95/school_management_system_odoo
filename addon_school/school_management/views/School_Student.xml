@@ -1,0 +1,76 @@
+ <odoo>
+  <data>
+
+
+ <!-- This is the veiw for studnets details and all related information -->
+    <record model="ir.ui.view" id="school_management_students_view">
+      <field name="name">school_management list</field>
+      <field name="model">school_management.students</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="student_name"/>
+          <field name="address"/>
+          <field name="roll_no"/>
+          <field name="year"/>
+          <field name="date_of_birth"/>
+          <field name="semester"/>
+        </tree>
+      </field>
+    </record>
+        <record model="ir.ui.view" id="school_management_students_form_view">
+      <field name="name">school_management list</field>
+      <field name="model">school_management.students</field>
+      <field name="arch" type="xml">
+        <form >
+          <header>
+             <field name="state" widget="statusbar" statusbar_visible="draft,sent,sale"/>
+          </header>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="student_name"/>
+              <field name="address"/>
+              <field name="year"/>
+              <field name="date_of_birth"/>
+              <field name="semester"/>
+              <field name="field_study"/>
+            </group>
+            <group>
+            </group>
+            <notebook>
+              <page string="Parents Info"> <!-- this will carry the parents module -->
+                <group>
+                  <field name="partner_id"/>
+                  <field name="parent_company_street"/>
+                  <field name="parent_phone"/>
+                  <field name="parent_email"/>
+                </group>
+              </page>
+              <page string="Attendance Sheet"> <!-- this will carry the sub view of attendence view -->
+                <group>
+                  <label string="Roll Number" />
+                  <div class="address_format">
+                    <field name="name" style="width: 7%" />
+                    <field name="field_study" style="width: 12%" />
+                  </div>
+               </group>
+              </page> 
+              <page string="assignment"> <!-- this will carry the model details of assignments-->
+                <group>
+                <field name="name"/>
+                </group>
+            </page>
+           <!--   <page string="Actions">
+                <group>
+                <field name="state"/>
+                </group>
+            </page> -->
+          </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    
+  </data>
+</odoo>

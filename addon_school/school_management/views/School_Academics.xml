@@ -1,0 +1,15 @@
+    <!-- This will be detailed veiw for Academis details covering most of the work in this project-->
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="school_management.academics_view">
+      <field name="name">school_management list</field>
+      <field name="model">school_management.academics</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+        </tree>
+      </field>
+    </record>
+  </data>
+</odoo>

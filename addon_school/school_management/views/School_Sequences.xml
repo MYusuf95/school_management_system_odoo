@@ -1,0 +1,11 @@
+
+<odoo>
+  <data>
+<record model="ir.sequence" id="seq_stu_id">
+    <field name="name">Roll Number</field>
+    <field name="code">roll.no</field>
+    <field name="prefix"></field>
+    <field name="padding">3</field>
+</record>
+ </data>
+</odoo>

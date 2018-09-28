@@ -1,0 +1,70 @@
+<odoo>
+  <data>
+
+
+
+
+    <!-- explicit list view definition -->
+  
+
+<!-- ACTION WINDOWS -->
+    <!-- This is default i am not using it-->
+<!--     
+    <record model="ir.actions.act_window" id="school_management.action_window">
+      <field name="name">school_management window</field>
+      <field name="res_model">school_management.school_management</field>
+      <field name="view_mode">tree,form</field>
+    </record> -->
+    
+
+<!--     ACTION WINDOW FOR STUDENTS MODEL -->
+
+    <record model="ir.actions.act_window"  id="school_management_students_action_window" >
+            <field name="name">school_student window</field>
+            <field name="res_model">school_management.students</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    
+<!--     ACTION WINDOW FOR TEACHER MODEL -->
+    <record model="ir.actions.act_window" id="school_management_teachers_action_window">
+      <field name="name">school_teacher window</field>
+      <field name="res_model">school_management.teachers</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+<!--     ACTION WINDOW FOR ACADEMICS MODEL -->
+    <record model="ir.actions.act_window" id="school_management_academics_action_window">
+      <field name="name">school_academics window</field>
+      <field name="res_model">school_management.academics</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+<!-- ACTION WINDOWS ENDS HERE-->
+
+
+ 
+<!-- MENUES -->
+    <!-- Top menu item -->
+    
+    <menuitem name="School Management" id="school_management.menu_root"/>
+    
+    <!-- menu categories -->
+    
+    <menuitem name="Categories" id="school_management.menu_1" parent="school_management.menu_root"/>
+   
+    
+    <!-- actions -->
+    
+   <menuitem name="Students" id="school_management.students_menue" parent="school_management.menu_1"
+              action="school_management_students_action_window"/> <!-- Students Menue -->
+  <menuitem name="Teachers" id="school_management.teachers_menue" parent="school_management.menu_1" 
+      action="school_management_teachers_action_window"/>         <!-- Teachers Menue -->
+  <menuitem name="Academics" id="school_management.academics_menue" parent="school_management.menu_1"
+      action="school_management_academics_action_window"/>        <!-- Academics Menue -->
+
+<!-- MENUES ENDS HERE-->
+
+    
+  </data>
+</odoo>
