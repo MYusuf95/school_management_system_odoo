@@ -5,3 +5,5 @@ from . import School_Students
 from . import School_Teachers
 from . import School_Academics
 from . import School_Assignment
+from . import School_Questions
+from . import School_Attendance

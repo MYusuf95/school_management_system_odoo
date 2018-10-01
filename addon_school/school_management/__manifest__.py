@@ -32,6 +32,9 @@
         'views/School_Student.xml',
         'views/School_Teachers.xml',
         'views/School_Academics.xml',
+        'views/School_Assignment.xml',
+        'views/School_Attendance.xml',
+        'views/School_Sequences.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode

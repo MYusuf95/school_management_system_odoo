@@ -11,7 +11,6 @@
           <field name="name"/>
           <field name="student_name"/>
           <field name="address"/>
-          <field name="roll_no"/>
           <field name="year"/>
           <field name="date_of_birth"/>
           <field name="semester"/>
@@ -54,11 +53,17 @@
                     <field name="name" style="width: 7%" />
                     <field name="field_study" style="width: 12%" />
                   </div>
-               </group>
+                  <field name="student_name"/> 
+               
+
+                <field name="attendance_id">
+                      <field name="attendence"/>
+                </field>
+                 </group>
               </page> 
-              <page string="assignment"> <!-- this will carry the model details of assignments-->
+              <page string="assignment">
                 <group>
-                <field name="name"/>
+                <field name="assignment_id"/>
                 </group>
             </page>
            <!--   <page string="Actions">

@@ -4,7 +4,6 @@ import time ,datetime
 
 class School_Teachers(models.Model):
     _name = 'school_management.teachers'
-
     name = fields.Char()
     value = fields.Integer()
     description = fields.Text()
