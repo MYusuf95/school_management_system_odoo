@@ -2,76 +2,78 @@
   <data>
 
 
- <!-- This is the veiw for studnets details and all related information -->
-    <record model="ir.ui.view" id="school_management_students_view">
-      <field name="name">school_management list</field>
-      <field name="model">school_management.students</field>
-      <field name="arch" type="xml">
-        <tree>
+   <!-- This is the veiw for studnets details and all related information -->
+   <record model="ir.ui.view" id="school_management_students_view">
+    <field name="name">school_management list</field>
+    <field name="model">school_management.students</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="student_name"/>
+        <field name="address"/>
+        <field name="year"/>
+        <field name="date_of_birth"/>
+        <field name="semester"/>
+      </tree>
+    </field>
+  </record>
+  <record model="ir.ui.view" id="school_management_students_form_view">
+    <field name="name">school_management list</field>
+    <field name="model">school_management.students</field>
+    <field name="arch" type="xml">
+      <form >
+        <header>
+         <field name="state" widget="statusbar" statusbar_visible="draft,sent,sale"/>
+       </header>
+       <sheet>
+        <group>
           <field name="name"/>
           <field name="student_name"/>
           <field name="address"/>
           <field name="year"/>
           <field name="date_of_birth"/>
           <field name="semester"/>
-        </tree>
-      </field>
-    </record>
-        <record model="ir.ui.view" id="school_management_students_form_view">
-      <field name="name">school_management list</field>
-      <field name="model">school_management.students</field>
-      <field name="arch" type="xml">
-        <form >
-          <header>
-             <field name="state" widget="statusbar" statusbar_visible="draft,sent,sale"/>
-          </header>
-          <sheet>
+          <field name="field_study"/>
+        </group>
+        <group>
+        </group>
+        <notebook>
+          <page string="Parents Info"> <!-- this will carry the parents module -->
             <group>
-              <field name="name"/>
-              <field name="student_name"/>
-              <field name="address"/>
-              <field name="year"/>
-              <field name="date_of_birth"/>
-              <field name="semester"/>
-              <field name="field_study"/>
+              <field name="partner_id"/>
+              <field name="parent_company_street"/>
+              <field name="parent_phone"/>
+              <field name="parent_email"/>
             </group>
+          </page>
+          <page string="Attendance Sheet"> <!-- this will carry the sub view of attendence view -->
             <group>
-            </group>
-            <notebook>
-              <page string="Parents Info"> <!-- this will carry the parents module -->
-                <group>
-                  <field name="partner_id"/>
-                  <field name="parent_company_street"/>
-                  <field name="parent_phone"/>
-                  <field name="parent_email"/>
-                </group>
-              </page>
-              <page string="Attendance Sheet"> <!-- this will carry the sub view of attendence view -->
-                <group>
-                  <label string="Roll Number" />
-                  <div class="address_format">
-                    <field name="name" style="width: 7%" />
-                    <field name="field_study" style="width: 12%" />
-                  </div>
-                  <field name="student_name"/> 
-               
+              <label string="Roll Number" />
+              <div class="address_format">
+                <field name="name" style="width: 7%" />
+                <field name="field_study" style="width: 12%" />
+              </div>
+              <field name="student_name"/> 
+              </group>
+              <group>
+              <field name="attendance_id" nolabel="1">
+                <tree  editable="bottom"  decoration-danger="attendance == False">
+                  <field name="classes"/>
+                  <field name="attendance"/>
+                  <field name="marked_date"/>
+                </tree>
+                <search><filter name="marked_date"/></search>
+              </field>
 
-                <field name="attendance_id">
-                      <field name="attendence"/>
-                </field>
-                 </group>
-              </page> 
-              <page string="assignment">
-                <group>
-                <field name="assignment_id"/>
-                </group>
-            </page>
-           <!--   <page string="Actions">
-                <group>
-                <field name="state"/>
-                </group>
-            </page> -->
-          </notebook>
+
+            </group>
+          </page> 
+          <page string="assignment">
+            <group>
+              <field name="assignment_id" nolabel = "1"/>
+            </group>
+          </page>
+            </notebook>
           </sheet>
         </form>
       </field>

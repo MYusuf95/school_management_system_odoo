@@ -1,8 +1,8 @@
 
-    <!-- This is the veiw for Teachers details and all related information -->
+<!-- This is the veiw for Teachers details and all related information -->
 <odoo>
   <data>
-<record model="ir.ui.view" id="school_management.teachers_view">
+    <record model="ir.ui.view" id="school_management.teachers_view">
       <field name="name">school_management list</field>
       <field name="model">school_management.teachers</field>
       <field name="arch" type="xml">
@@ -12,5 +12,19 @@
         </tree>
       </field>
     </record>
-      </data>
+    <record model="ir.ui.view" id="school_management.teachers_form_view">
+      <field name="name">school_management list</field>
+      <field name="model">school_management.teachers</field>
+      <field name="arch" type="xml">
+        <form >
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="value"/>
+            </group>
+          </sheet>
+        </form>
+          </field>
+        </record>
+  </data>
 </odoo>

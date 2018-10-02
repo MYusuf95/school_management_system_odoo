@@ -4,10 +4,11 @@
       <field name="name">school_management list</field>
       <field name="model">school_management.assignment</field>
       <field name="arch" type="xml">
-        <tree  decoration-danger="deadline &lt; current_date">
+        <tree  decoration-danger="deadline &lt; current_date" decoration-success="state == 'accepted'">
           <field name="name"/>
           <field name="total_marks"/>
-          <field name="deadline"/>
+          <field name="deadline"/>  <!-- invisible="[('state', '=','pending')]" -->
+          <field name="state"/>
         </tree>
       </field>
     </record>

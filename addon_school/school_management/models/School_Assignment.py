@@ -12,3 +12,4 @@ class School_Assignment(models.Model):
     deadline = fields.Date()
     description = fields.Text()
     hints = fields.Text()
+    state = fields.Selection([('accepted','Accepted'),('regected','Regected'),('pending','Pending')],default="pending")

@@ -1,0 +1,29 @@
+ <odoo>
+  <data>
+<!--       <record model="ir.ui.view" id="school_management.time_table_view">
+      <field name="name">school_management</field>
+      <field name="model">school_management.time_table</field>
+      <field name="arch" type="xml">
+        <tree  editable="top" >
+              <field name="classes"/>
+              <field name="attendance"/>
+        </tree>
+      </field>
+    </record>
+  <record model="ir.ui.view" id="school_management.teachers_form_view">
+      <field name="name">school_management list</field>
+      <field name="model">school_management.time_table</field>
+      <field name="arch" type="xml">
+        <form >
+          <sheet>
+            <group>
+             <field name="classes"/>
+              <field name="attendance"/>
+            </group>
+          </sheet>
+        </form>
+          </field>
+        </record> -->
+    
+      </data>
+  </odoo>

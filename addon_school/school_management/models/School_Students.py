@@ -27,9 +27,9 @@ class School_Students(models.Model):
     parent_email = fields.Char(related='partner_id.email' ,string="Email", readonly="True")
     state = fields.Selection([('student', 'Student'), ('left', 'Left'), ('passed', 'Passed'), ('expeled', 'Expeled'), ('suspended', 'Suspended')],default="student") 													 # this is an important field which will tell if the student (left,passed out or currently a student keep this field in the last )
     
-    assignment_id = fields.Many2many("school_management.assignment", string="Assignment")
+    assignment_id = fields.Many2many('school_management.assignment', string="Assignment")
     
-    attendance_id = fields.One2many("school_management.attendance",'student_id', string="Attendance")
+    attendance_id = fields.One2many('school_management.time_table','student_id')
     
 
     # @api.multi
