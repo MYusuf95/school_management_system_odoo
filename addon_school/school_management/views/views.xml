@@ -29,7 +29,7 @@
 <!--     ACTION WINDOW FOR TEACHER MODEL -->
     <record model="ir.actions.act_window" id="school_management_teachers_action_window">
       <field name="name">school_teacher window</field>
-      <field name="res_model">school_management.teachers</field>
+      <field name="res_model">school_management.assignment</field>
       <field name="view_mode">tree,form</field>
     </record>
     
@@ -58,8 +58,15 @@
     
    <menuitem name="Students" id="school_management.students_menue" parent="school_management.menu_1"
               action="school_management_students_action_window"/> <!-- Students Menue -->
+
+
+              <!-- Teachers Menue -->
   <menuitem name="Teachers" id="school_management.teachers_menue" parent="school_management.menu_1" 
-      action="school_management_teachers_action_window"/>         <!-- Teachers Menue -->
+      />         
+
+      <menuitem name="Assignments" id="school_management.teachers_sub_menue" parent="school_management.teachers_menue" 
+      action="school_management_teachers_action_window"/> 
+
   <menuitem name="Academics" id="school_management.academics_menue" parent="school_management.menu_1"
       action="school_management_academics_action_window"/>        <!-- Academics Menue -->
 

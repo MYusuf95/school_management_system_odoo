@@ -1,29 +1,30 @@
  <odoo>
   <data>
-<!--       <record model="ir.ui.view" id="school_management.time_table_view">
-      <field name="name">school_management</field>
-      <field name="model">school_management.time_table</field>
-      <field name="arch" type="xml">
-        <tree  editable="top" >
-              <field name="classes"/>
-              <field name="attendance"/>
-        </tree>
-      </field>
-    </record>
-  <record model="ir.ui.view" id="school_management.teachers_form_view">
-      <field name="name">school_management list</field>
-      <field name="model">school_management.time_table</field>
-      <field name="arch" type="xml">
-        <form >
-          <sheet>
-            <group>
-             <field name="classes"/>
-              <field name="attendance"/>
-            </group>
-          </sheet>
-        </form>
-          </field>
-        </record> -->
-    
+        <record model="ir.ui.view" id="wizard_form_view_assign">
+            <field name="name">wizard</field>
+            <field name="model">school_management.as_w</field>
+            <field name="arch" type="xml">
+                <form string="Assign Subjects">
+                    <group>
+                        <field name="student_ids"/>
+                        <field name="assignment_ids"/>
+                    </group>
+                    <footer>
+                        <button name="assign" type="object"
+                                string="Assign" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="launch_session_wizard_assignment"
+                    name="Assign Assignment"
+                    src_model="school_management.assignment"
+                    res_model="school_management.as_w"
+                    view_mode="form"
+                    target="new"
+                    key2="client_action_multi"/>    
       </data>
   </odoo>

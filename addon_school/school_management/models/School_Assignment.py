@@ -4,7 +4,7 @@ import time ,datetime
 
 class School_Assignment(models.Model):
     _name = 'school_management.assignment'
-
+    student_ids = fields.Many2many('school_management.students')
     name = fields.Char(default="null")
     total_marks = fields.Float()
     scored_marks = fields.Float()

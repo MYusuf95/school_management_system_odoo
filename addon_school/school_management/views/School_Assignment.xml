@@ -4,7 +4,7 @@
       <field name="name">school_management list</field>
       <field name="model">school_management.assignment</field>
       <field name="arch" type="xml">
-        <tree  decoration-danger="deadline &lt; current_date" decoration-success="state == 'accepted'">
+        <tree decoration-danger="deadline &lt; current_date or state == 'regected'" decoration-success="state == 'accepted'">
           <field name="name"/>
           <field name="total_marks"/>
           <field name="deadline"/>  <!-- invisible="[('state', '=','pending')]" -->
@@ -12,5 +12,23 @@
         </tree>
       </field>
     </record>
+
+
+    <record model="ir.ui.view" id="school_management.teachers_form_view1">
+      <field name="name">school_management list</field>
+      <field name="model">school_management.assignment</field>
+      <field name="arch" type="xml">
+        <form >
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="total_marks"/>
+              <field name="deadline"/>  <!-- invisible="[('state', '=','pending')]" -->
+              <field name="state"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record> 
   </data>
 </odoo>

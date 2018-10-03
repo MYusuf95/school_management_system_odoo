@@ -1,7 +1,5 @@
  <odoo>
   <data>
-
-
    <!-- This is the veiw for studnets details and all related information -->
    <record model="ir.ui.view" id="school_management_students_view">
     <field name="name">school_management list</field>
@@ -57,15 +55,13 @@
               </group>
               <group>
               <field name="attendance_id" nolabel="1">
-                <tree  editable="bottom"  decoration-danger="attendance == False">
+                <tree  context="{'marked_date':'context_today'}" editable="bottom"  decoration-danger="attendance == False">
                   <field name="classes"/>
                   <field name="attendance"/>
                   <field name="marked_date"/>
-                </tree>
-                <search><filter name="marked_date"/></search>
+                  <!-- context="{'marked_date':'context_today'}"   domain="[('marked_date','=',context_today())]" -->
+                 </tree>
               </field>
-
-
             </group>
           </page> 
           <page string="assignment">

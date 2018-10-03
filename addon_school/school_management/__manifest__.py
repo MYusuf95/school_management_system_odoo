@@ -35,6 +35,7 @@
         'views/School_Assignment.xml',
         'views/School_Time_Table.xml',
         'views/Student_Subject_Assigning.xml',
+        'views/Student_Assignment_Marking.xml',
         'views/School_Sequences.xml',
         'views/templates.xml',
     ],

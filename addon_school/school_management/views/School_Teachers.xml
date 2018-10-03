@@ -1,30 +1,33 @@
-
-<!-- This is the veiw for Teachers details and all related information -->
-<odoo>
+ <odoo>
   <data>
-    <record model="ir.ui.view" id="school_management.teachers_view">
+    <record model="ir.ui.view" id="school_management.assignment_view">
       <field name="name">school_management list</field>
-      <field name="model">school_management.teachers</field>
+      <field name="model">school_management.assignment</field>
       <field name="arch" type="xml">
         <tree >
           <field name="name"/>
-          <field name="value"/>
-        </tree>
+          <field name="total_marks"/>
+          <field name="deadline"/>  <!-- invisible="[('state', '=','pending')]" -->
+<!--           <field name="state"/>
+ -->        </tree>
       </field>
     </record>
-    <record model="ir.ui.view" id="school_management.teachers_form_view">
+
+    <record model="ir.ui.view" id="school_management.teachers_form_view1">
       <field name="name">school_management list</field>
-      <field name="model">school_management.teachers</field>
+      <field name="model">school_management.assignment</field>
       <field name="arch" type="xml">
         <form >
           <sheet>
             <group>
               <field name="name"/>
-              <field name="value"/>
+              <field name="total_marks"/>
+              <field name="deadline"/>  <!-- invisible="[('state', '=','pending')]" -->
+              <!-- <field name="state"/> -->
             </group>
           </sheet>
         </form>
-          </field>
-        </record>
+      </field>
+    </record> 
   </data>
 </odoo>
