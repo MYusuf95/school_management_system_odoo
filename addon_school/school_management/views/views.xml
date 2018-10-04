@@ -4,11 +4,11 @@
 
 
 
-    <!-- explicit list view definition -->
-  
+    <!-- explicit list view definition
 
-<!-- ACTION WINDOWS -->
-    <!-- This is default i am not using it-->
+
+   
+    <! This is default i am not using it-->
 <!--     
     <record model="ir.actions.act_window" id="school_management.action_window">
       <field name="name">school_management window</field>
@@ -17,34 +17,62 @@
     </record> -->
     
 
-<!--     ACTION WINDOW FOR STUDENTS MODEL -->
+    <!--     ACTION WINDOW FOR STUDENTS MODEL -->
 
     <record model="ir.actions.act_window"  id="school_management_students_action_window" >
-            <field name="name">school_student window</field>
-            <field name="res_model">school_management.students</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-    
-<!--     ACTION WINDOW FOR TEACHER MODEL -->
-    <record model="ir.actions.act_window" id="school_management_teachers_action_window">
-      <field name="name">school_teacher window</field>
-      <field name="res_model">school_management.assignment</field>
+      <field name="name">school_student window</field>
+      <field name="res_model">school_management.students</field>
+      <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
     </record>
     
-<!--     ACTION WINDOW FOR ACADEMICS MODEL -->
+    <!--     ACTION WINDOW FOR TEACHER MODEL -->
+ <!--    <record model="ir.actions.act_window" id="school_management_teachers_action_window">
+      <field name="name">school_teacher window1</field>
+      <field name="view_id" ref="teachers_form_view_teachersss"/> 
+      <field name="res_model">school_management.assignment</field>
+      <field name="view_mode">tree,form</field>  
+      <field name="sequence">1</field>
+    </record> -->
+    
+    <!--     ACTION WINDOW FOR ACADEMICS MODEL -->
     <record model="ir.actions.act_window" id="school_management_academics_action_window">
       <field name="name">school_academics window</field>
       <field name="res_model">school_management.academics</field>
       <field name="view_mode">tree,form</field>
     </record>
 
-<!-- ACTION WINDOWS ENDS HERE-->
+
+    <!--     ACTION WINDOW FOR TEACHER MODEL -->
+     
+
+    <record id="school_management_teachers_action_window" model="ir.actions.act_window">
+      <field name="act_window_id" ref="school_management_teachers_action_window" />
+      <field name="view_id" ref="teachers_form_view2" />
+      <field name="view_mode">form</field>
+      <field name="sequence">2</field>
+    </record>
+
+    <record id="school_management.action_all_customers_form" model="ir.actions.act_window.view">
+    <field name="act_window_id" ref="school_management_teachers_action_window" />
+      <field name="view_id" ref="teachers_form_view_teachersss" />
+      <field name="view_mode">tree</field>
+      <field name="sequence">1</field>
+    </record>
 
 
- 
-<!-- MENUES -->
+    
+  <record model="ir.actions.act_window" id="school_management_courses_action_window">
+      <field name="name">school_courses window</field>
+      <field name="res_model">school_management.courses</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- ACTION WINDOWS ENDS HERE-->
+
+
+
+    <!-- MENUES -->
     <!-- Top menu item -->
     
     <menuitem name="School Management" id="school_management.menu_root"/>
@@ -52,26 +80,33 @@
     <!-- menu categories -->
     
     <menuitem name="Categories" id="school_management.menu_1" parent="school_management.menu_root"/>
-   
+
     
     <!-- actions -->
     
-   <menuitem name="Students" id="school_management.students_menue" parent="school_management.menu_1"
-              action="school_management_students_action_window"/> <!-- Students Menue -->
+    <menuitem name="Students" id="school_management.students_menue" parent="school_management.menu_1"
+      action="school_management_students_action_window"/> <!-- Students Menue -->
 
 
-              <!-- Teachers Menue -->
-  <menuitem name="Teachers" id="school_management.teachers_menue" parent="school_management.menu_1" 
-      />         
+      <!-- Teachers Menue -->
+      <menuitem name="Teachers" id="school_management.teachers_menue" parent="school_management.menu_1" 
+        />         
 
-      <menuitem name="Assignments" id="school_management.teachers_sub_menue" parent="school_management.teachers_menue" 
-      action="school_management_teachers_action_window"/> 
+        <menuitem name="Assignments" id="school_management.teachers_sub_menue1" parent="school_management.teachers_menue" 
+          action="school_management_teachers_action_window"/>  
 
-  <menuitem name="Academics" id="school_management.academics_menue" parent="school_management.menu_1"
-      action="school_management_academics_action_window"/>        <!-- Academics Menue -->
 
-<!-- MENUES ENDS HERE-->
+           <menuitem name="Subjects" id="school_management.teachers_sub_menue2" parent="school_management.teachers_menue" 
+          action="school_management_courses_action_window"/>  
 
-    
-  </data>
-</odoo>
+          <menuitem name="Academics" id="school_management.academics_menue" parent="school_management.menu_1"
+            action="school_management_academics_action_window"/>      
+
+            <!-- MENUES ENDS HERE-->
+
+
+
+
+
+          </data>
+        </odoo> 

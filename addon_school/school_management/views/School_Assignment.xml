@@ -1,10 +1,11 @@
  <odoo>
   <data>
     <record model="ir.ui.view" id="school_management.assignment_view">
+      <field name="priority" eval="10" />
       <field name="name">school_management list</field>
       <field name="model">school_management.assignment</field>
       <field name="arch" type="xml">
-        <tree decoration-danger="deadline &lt; current_date or state == 'regected'" decoration-success="state == 'accepted'">
+        <tree decoration-danger="(deadline &lt; current_date and state != 'accepted')  or state == 'regected'" decoration-success="state == 'accepted'">
           <field name="name"/>
           <field name="total_marks"/>
           <field name="deadline"/>  <!-- invisible="[('state', '=','pending')]" -->
@@ -18,17 +19,67 @@
       <field name="name">school_management list</field>
       <field name="model">school_management.assignment</field>
       <field name="arch" type="xml">
-        <form >
+        <form>
           <sheet>
             <group>
               <field name="name"/>
               <field name="total_marks"/>
-              <field name="deadline"/>  <!-- invisible="[('state', '=','pending')]" -->
+              <field name="deadline"/>
               <field name="state"/>
             </group>
           </sheet>
         </form>
       </field>
     </record> 
+
+
+
+<record model="ir.ui.view" id="school_management.teachers_form_view2">
+      <field name="name">school_management list</field>
+      <field name="model">school_management.assignment</field>
+
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="total_marks"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record> 
+
+
+    <record model="ir.ui.view" id="school_management.teachers_form_view_teachersss">
+      <field name="priority" eval="20" />
+      <field name="view_id" ref="teachers_form_view2" />
+      <field name="name">school_management </field>
+      <field name="model">school_management.assignment</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="total_marks"/>
+          <field name="description"/>
+          <field name="hints"/>
+        </tree>
+      </field>
+    </record> 
+
+
+
+
+
+
   </data>
 </odoo>
+
+
+  <!--  <form >
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="total_marks"/>
+            </group>
+          </sheet>
+        </form> -->

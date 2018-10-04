@@ -22,8 +22,7 @@
             <group>
               <field name="name"/>
               <field name="total_marks"/>
-              <field name="deadline"/>  <!-- invisible="[('state', '=','pending')]" -->
-              <!-- <field name="state"/> -->
+              <field name="deadline"/> 
             </group>
           </sheet>
         </form>

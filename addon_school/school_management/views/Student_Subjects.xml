@@ -1,0 +1,14 @@
+    <!-- This will be detailed veiw for Academis details covering most of the work in this project-->
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="school_management.academics_view">
+      <field name="name">school_management list</field>
+      <field name="model">school_management.courses</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="time_table_id"/>
+        </tree>
+      </field>
+    </record>
+  </data>
+</odoo>
